@@ -1,0 +1,28 @@
+#!/usr/bin/perl -w
+##Copyright (C) 2014 by Ryuhkohchin
+
+
+use strict;
+
+sub check{
+	my %list;
+	foreach (@ARGV){
+		$list{$_} = 1;
+	}
+	while(<>){
+		if(/\A##Copyright/){
+			delete $list{$ARGV};
+		}
+	}
+	%list
+}
+my %list = &check;
+@ARGV = sort keys %list;
+$^I = "~";
+my $enter = "\n##Copyright (C) 2014 by Ryuhkohchin\n";
+while(<>){
+	s/^(#!\/usr.*)/$&$enter/;
+	print;
+}
+print "Modify Done!\n";
+

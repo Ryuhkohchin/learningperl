@@ -1,0 +1,14 @@
+#!/usr/bin/perl -w
+##Copyright (C) 2014 by Ryuhkohchin
+
+
+use strict;
+
+$^I = ".out";
+
+while(<>){
+	s/fred/Larry/ig;
+	print;
+}
+
+

@@ -1,0 +1,16 @@
+#!/usr/bin/perl -w
+##Copyright (C) 2014 by Ryuhkohchin
+
+
+use strict;
+
+$^I = ".out";
+
+while(<>){
+	s/fred/bitch/ig;
+	s/wilma/Fred/ig;
+	s/bitch/Wilma/ig;	
+	print;
+}
+
+
