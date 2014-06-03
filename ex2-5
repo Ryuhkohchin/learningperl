@@ -1,0 +1,13 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+print "Enter a string and a number \n";
+print "String : ";
+my $string = <STDIN>;
+print "Number : ";
+my $number = <STDIN>;
+while($number > 0){
+	print $string;
+	$number --;
+}

@@ -1,0 +1,10 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+print "Enter two numbers : \nfirst: ";
+my $number_1 = <STDIN>;
+print "second : ";
+my $number_2 = <STDIN>;
+my $result = $number_1 * $number_2;
+print "result : $result\n";

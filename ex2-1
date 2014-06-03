@@ -1,0 +1,7 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+my $PI = 3.141592654;
+my $perimeter = 12.5 * $PI * 2;
+print "perimeter : $perimeter\n";
