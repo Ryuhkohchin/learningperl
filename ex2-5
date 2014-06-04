@@ -6,8 +6,6 @@ print "Enter a string and a number \n";
 print "String : ";
 my $string = <STDIN>;
 print "Number : ";
-my $number = <STDIN>;
-while($number > 0){
-	print $string;
-	$number --;
-}
+chomp(my $number = <STDIN>);
+my $result = $string x $number;
+print $result;

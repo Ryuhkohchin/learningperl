@@ -4,7 +4,7 @@ use strict;
 
 print "Enter the ratio : \n";
 my $PI = 3.141592654;
-my $ratio = <STDIN>;
+chomp(my $ratio = <STDIN>);
 my $perimeter = 0;
 if($ratio > 0){
 	$perimeter = $ratio * $PI * 2;
