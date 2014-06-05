@@ -1,0 +1,8 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+my @lines = <STDIN>;
+@lines = reverse @lines;
+print @lines;
+

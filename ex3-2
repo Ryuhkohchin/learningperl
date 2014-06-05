@@ -1,0 +1,12 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+my @names = qw/fred betty barney dino wilma pebbles bamm-bamm/;
+chomp(my @indexs = <STDIN>);
+print "\nThe Names is :\n";
+foreach (@indexs){
+	if(defined($names[$_-1])){
+		print "$names[$_-1]\n";
+	}
+}

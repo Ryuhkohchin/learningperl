@@ -1,0 +1,11 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+chomp(my @lines=<STDIN>);
+print "@lines\n";
+my @lines_sort = sort @lines;
+print "@lines_sort\n";
+foreach(@lines_sort){
+	print "$_\n";
+}
