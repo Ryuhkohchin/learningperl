@@ -1,0 +1,17 @@
+#!/usr/bin/perl -w
+
+use 5.010;
+
+sub greet{
+	state $for_guest;
+	if(defined($for_guest)){
+		print "Hi $_[0]! $for_guest is also here!\n";
+	}else{
+		print "Hi $_[0]! You are the first one here!\n";
+	}
+	$for_guest = $_[0]; 
+}
+
+greet("Fred");
+greet("Barney");
+greet("Wilma");

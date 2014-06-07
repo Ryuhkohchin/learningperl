@@ -1,0 +1,15 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+sub total{
+	my @numbers = @_;
+	my $sum = 0;
+	foreach(@numbers){
+		$sum += $_;
+	}
+	$sum
+}
+
+my $result = total(1...1000);
+print "Result is $result.\n";
