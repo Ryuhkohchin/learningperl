@@ -1,0 +1,9 @@
+#!/usr/bin/perl -w
+use strict;
+
+print "Enter something end with CTRL+D\n";
+chomp(my @lines = <>);
+print "1234567890" x 6 , "\n";
+foreach (@lines){
+	printf("%20s\n",$_);
+}
