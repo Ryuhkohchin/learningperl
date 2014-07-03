@@ -1,0 +1,16 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+my %name_list = (
+	fred => "flintstone",
+	barney => "rubble",
+	wilma => "flintstone",
+);
+print "Enter the birth name : \n";
+chomp(my $bname = <STDIN>);
+if(exists $name_list{$bname}){
+	print "Family name of $bname is $name_list{$bname}\n";
+}else{
+	print "No Data!\n";
+}

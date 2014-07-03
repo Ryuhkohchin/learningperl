@@ -1,0 +1,20 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+my %words;
+if(!open WORD,"words_6_2"){
+	print "ERROR!\n";
+}
+while(<WORD>){
+	chomp;
+	$words{$_} += 1;
+}
+while((my $key,my $value) = each %words){
+	print "$key -> $value\n";
+}
+print "------------------------------------------\n";
+foreach my $key (sort keys %words){
+	print "$key -> $words{$key}\n";
+}
+close WORD;
