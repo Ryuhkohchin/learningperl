@@ -1,0 +1,12 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+open FS,"fred_story_ex7";
+while(<FS>){
+	chomp;
+	if(/\./){
+		print;
+		print "\n\n";
+	}
+}
