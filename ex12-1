@@ -1,0 +1,34 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+my %stat;
+
+foreach(@ARGV){
+	my $result = &stat($_);
+	print "$_$result\n";
+}
+	
+sub stat{
+	my $f_name = shift @_;
+	return "doesnt exist" unless -e $f_name;
+	my @attrib;
+	if(-r _){
+		push @attrib,"read:yes";
+	}else{
+		push @attrib,"read:no";
+	}
+	if(-w _){
+		push @attrib,"write:yes";
+	}else{
+		push @attrib,"write:no";
+	}
+	if(-x _){
+		push @attrib,"exec:yes";
+	}else{
+		push @attrib,"exec:no";
+	}
+	"\t:\t".join "\t",@attrib;
+}
+
+	

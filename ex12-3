@@ -1,0 +1,10 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+die "no file is supplyed!\n" unless @ARGV;
+
+foreach (@ARGV){
+	next unless -e $_;
+	print "$_ is ok!\n" if -o -w -r $_;
+}

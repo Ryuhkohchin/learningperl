@@ -1,0 +1,16 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+die "No file names supplied!\n" unless @ARGV;
+my $old_file = shift @ARGV;
+my $old_time = -M $old_file;
+
+foreach (@ARGV){
+	next unless -e;
+	print "$old_time\n";
+	my $time = -M;
+	($old_time,$old_file) = ($time,$_)
+		if $time > $old_time;
+}
+print "Oldest file is $old_file; time is $old_time.\n";
