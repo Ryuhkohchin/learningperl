@@ -1,0 +1,19 @@
+#!/usr/bin/perl -w
+
+use strict;
+use File::Basename;
+use File::Spec;
+
+my $sym = shift @ARGV if $ARGV[0] eq "-s";
+my ($src,$dst) = @ARGV;
+if(-d $dst){
+	my $fname = basename $src; 
+	$dst = File::Spec->catfile($dst,$fname);
+}
+if($sym){
+	symlink $src,$dst
+		or die "Cant rename from $src to $dst\n";
+}else{
+	link $src,$dst
+		or die "Cant rename from $src to $dst\n";
+}

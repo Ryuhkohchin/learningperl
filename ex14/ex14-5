@@ -1,0 +1,14 @@
+#!/usr/bin/perl -w
+
+use strict;
+use File::Basename;
+use File::Spec;
+
+my ($src,$dst) = @ARGV;
+die "Param error!\n" unless (-e -f $src);
+if(-d $dst){
+	my $fname = basename $src; 
+	$dst = File::Spec->catfile($dst,$fname);
+}
+rename $src,$dst
+	or die "Cant rename from $src to $dst\n";
