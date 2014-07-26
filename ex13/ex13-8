@@ -1,0 +1,8 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+foreach (<.* *>){
+	my $dest = readlink $_;
+	print "$_->$dest\n" if defined $dest;
+}
