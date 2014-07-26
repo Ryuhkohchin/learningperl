@@ -1,0 +1,16 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+print "Please enter a string:\n";
+chomp(my $str = <STDIN>);
+print "Please enter a sub one\n";
+chomp(my $sub_str = <STDIN>);
+my @poses;
+my $pos = -1;
+while(1){
+	$pos = index($str,$sub_str,$pos+1);
+	last if $pos == -1;
+	push @poses,$pos;
+}
+print "@poses\n";

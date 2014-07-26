@@ -1,0 +1,14 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+sub by_number{ $a <=> $b; }
+
+my @number_list;
+while(<>){
+	push @number_list,split;
+}
+my @sort_list = sort by_number @number_list;
+foreach (@sort_list){
+	printf("%10g\n",$_);
+}
