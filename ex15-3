@@ -1,0 +1,20 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+use 5.010;
+
+opendir my $dir,$ARGV[0];
+my @f_names = readdir $dir;
+my @result;
+foreach (@f_names){
+	say "\nCheck $_";
+	when(!-e) {say "File not exist!";}
+	when(-w _){print "writeable!\t";continue}
+	when(-r _){print "readable!\t";continue}
+	when(-x _){print "execable!"}
+}
+print "\n";
+closedir $dir;
+
+
